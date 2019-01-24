@@ -3,6 +3,7 @@ package com.examples.school.repository.mongo;
 import static com.examples.school.repository.mongo.StudentMongoRepository.SCHOOL_DB_NAME;
 import static com.examples.school.repository.mongo.StudentMongoRepository.STUDENT_COLLECTION_NAME;
 import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.*;
 
 import java.net.InetSocketAddress;
 
@@ -57,4 +58,8 @@ public class StudentMongoRepositoryTest {
 		client.close();
 	}
 
+	@Test
+	public void testFindAllWhenDatabaseIsEmpty() {
+		assertThat(studentRepository.findAll()).isEmpty();
+	}
 }
