@@ -17,6 +17,7 @@
     <mockito.version>2.23.0</mockito.version>
     <mongo.driver.version>3.9.1</mongo.driver.version>
     <mongo.java.server.version>1.11.1</mongo.java.server.version>
+    <testcontainers.version>1.10.5</testcontainers.version>
   </properties>
 
   <dependencies>
@@ -53,6 +54,12 @@
       <groupId>de.bwaldvogel</groupId>
       <artifactId>mongo-java-server</artifactId>
       <version>${mongo.java.server.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.testcontainers</groupId>
+      <artifactId>testcontainers</artifactId>
+      <version>${testcontainers.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
