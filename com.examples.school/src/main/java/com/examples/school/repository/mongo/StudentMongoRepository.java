@@ -10,6 +10,7 @@ import com.examples.school.model.Student;
 import com.examples.school.repository.StudentRepository;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.model.Filters;
 
 public class StudentMongoRepository implements StudentRepository {
 
@@ -27,13 +28,19 @@ public class StudentMongoRepository implements StudentRepository {
 	public List<Student> findAll() {
 		return StreamSupport.
 				stream(studentCollection.find().spliterator(), false)
-				.map(d -> new Student(""+d.get("id"), ""+d.get("name")))
+				.map(this::fromDocumentToStudent)
 				.collect(Collectors.toList());
+	}
+
+	private Student fromDocumentToStudent(Document d) {
+		return new Student(""+d.get("id"), ""+d.get("name"));
 	}
 
 	@Override
 	public Student findById(String id) {
-		// TODO Auto-generated method stub
+		Document d = studentCollection.find(Filters.eq("id", id)).first();
+		if (d != null)
+			return fromDocumentToStudent(d);
 		return null;
 	}
 
