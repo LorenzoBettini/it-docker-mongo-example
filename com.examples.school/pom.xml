@@ -15,9 +15,21 @@
     <junit.version>4.12</junit.version>
     <assertj.version>3.11.1</assertj.version>
     <mockito.version>2.23.0</mockito.version>
+    <mongo.driver.version>3.9.1</mongo.driver.version>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongo-java-driver</artifactId>
+      <version>${mongo.driver.version}</version>
+    </dependency>
+    <dependency>
+      <!-- required to see Mongo Java Driver logs -->
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
