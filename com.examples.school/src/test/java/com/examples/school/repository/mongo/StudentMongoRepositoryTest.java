@@ -2,7 +2,6 @@ package com.examples.school.repository.mongo;
 
 import static com.examples.school.repository.mongo.StudentMongoRepository.SCHOOL_DB_NAME;
 import static com.examples.school.repository.mongo.StudentMongoRepository.STUDENT_COLLECTION_NAME;
-import static org.junit.Assert.*;
 import static org.assertj.core.api.Assertions.*;
 
 import java.net.InetSocketAddress;
@@ -14,6 +13,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.examples.school.model.Student;
 import com.mongodb.MongoClient;
 import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoCollection;
@@ -61,5 +61,22 @@ public class StudentMongoRepositoryTest {
 	@Test
 	public void testFindAllWhenDatabaseIsEmpty() {
 		assertThat(studentRepository.findAll()).isEmpty();
+	}
+
+	@Test
+	public void testFindAllWhenDatabaseIsNotEmpty() {
+		addTestStudentToDatabase("1", "test1");
+		addTestStudentToDatabase("2", "test2");
+		assertThat(studentRepository.findAll())
+			.containsExactly(
+				new Student("1", "test1"),
+				new Student("2", "test2"));
+	}
+
+	private void addTestStudentToDatabase(String id, String name) {
+		studentCollection.insertOne(
+				new Document()
+					.append("id", id)
+					.append("name", name));
 	}
 }
