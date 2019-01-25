@@ -22,6 +22,17 @@ import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
+/**
+ * Some integration tests for the
+ * {@link com.examples.school.mongo.StudentMongoRepository}, relying on
+ * Testcontainers.
+ * 
+ * These tests do not necessarily make sense: they are meant to be a
+ * demonstration of Testcontainers.
+ * 
+ * @author Lorenzo Bettini
+ *
+ */
 public class StudentMongoRepositoryTestcontainersIT {
 
 	@SuppressWarnings("rawtypes")

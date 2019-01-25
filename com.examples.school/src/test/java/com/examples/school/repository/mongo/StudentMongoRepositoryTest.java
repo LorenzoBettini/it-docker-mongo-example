@@ -25,6 +25,16 @@ import com.mongodb.client.MongoDatabase;
 import de.bwaldvogel.mongo.MongoServer;
 import de.bwaldvogel.mongo.backend.memory.MemoryBackend;
 
+/**
+ * Some unit tests for the
+ * {@link com.examples.school.mongo.StudentMongoRepository}, relying on an
+ * in-memory MongoDB, using MongoDB Java server.
+ * 
+ * These tests are meant to verify all paths of our repository.
+ * 
+ * @author Lorenzo Bettini
+ *
+ */
 public class StudentMongoRepositoryTest {
 
 	private static MongoServer server;
