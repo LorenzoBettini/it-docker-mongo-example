@@ -18,7 +18,7 @@ import com.mongodb.MongoClient;
  * Communicates with a MongoDB server on localhost; start MongoDB with Docker with
  * 
  * <pre>
- * docker run -p 27017:27017 --rm mongo:4.0.5
+ * docker run -p 27017:27017 --rm mongo:4.2.3
  * </pre>
  * 
  * @author Lorenzo Bettini

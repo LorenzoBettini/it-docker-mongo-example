@@ -38,7 +38,7 @@ public class StudentMongoRepositoryTestcontainersIT {
 	@SuppressWarnings("rawtypes")
 	@ClassRule
 	public static final GenericContainer mongo =
-		new GenericContainer("mongo:4.0.5") 
+		new GenericContainer("mongo:4.2.3") 
 			.withExposedPorts(27017);
 
 	private MongoClient client;
