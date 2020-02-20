@@ -12,12 +12,12 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <junit.version>4.12</junit.version>
-    <assertj.version>3.11.1</assertj.version>
-    <mockito.version>2.23.0</mockito.version>
-    <mongo.driver.version>3.9.1</mongo.driver.version>
-    <mongo.java.server.version>1.11.1</mongo.java.server.version>
-    <testcontainers.version>1.10.5</testcontainers.version>
+    <junit.version>4.13</junit.version>
+    <assertj.version>3.15.0</assertj.version>
+    <mockito.version>3.2.4</mockito.version>
+    <mongo.driver.version>3.12.1</mongo.driver.version>
+    <mongo.java.server.version>1.24.0</mongo.java.server.version>
+    <testcontainers.version>1.12.5</testcontainers.version>
   </properties>
 
   <dependencies>
