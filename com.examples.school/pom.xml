@@ -12,7 +12,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <junit.version>4.13</junit.version>
+    <junit.version>4.13.1</junit.version>
     <assertj.version>3.15.0</assertj.version>
     <mockito.version>3.2.4</mockito.version>
     <mongo.driver.version>3.12.1</mongo.driver.version>
