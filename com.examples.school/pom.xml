@@ -12,7 +12,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <junit.version>4.13.1</junit.version>
+    <junit.version>5.7.0</junit.version>
     <assertj.version>3.18.1</assertj.version>
     <mockito.version>3.7.0</mockito.version>
     <mongo.driver.version>3.12.7</mongo.driver.version>
@@ -33,8 +33,15 @@
       <version>1.2.3</version>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- For JUnit 4 tests -->
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
@@ -71,6 +78,16 @@
   </dependencies>
 
   <build>
+    <pluginManagement>
+      <plugins>
+        <!--  Make sure that surefire can run JUnit 5 tests
+          by specifying a known version -->
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
