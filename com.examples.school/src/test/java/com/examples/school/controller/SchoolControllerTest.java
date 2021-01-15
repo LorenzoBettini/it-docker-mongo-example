@@ -5,6 +5,7 @@ import static java.util.Arrays.asList;
 
 import java.util.List;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InOrder;
@@ -27,9 +28,16 @@ public class SchoolControllerTest {
 	@InjectMocks
 	private SchoolController schoolController;
 
+	private AutoCloseable closeable;
+
 	@Before
-	public void setUp() throws Exception {
-		MockitoAnnotations.initMocks(this);
+	public void setup() {
+		closeable = MockitoAnnotations.openMocks(this);
+	}
+
+	@After
+	public void releaseMocks() throws Exception {
+		closeable.close();
 	}
 
 	@Test
