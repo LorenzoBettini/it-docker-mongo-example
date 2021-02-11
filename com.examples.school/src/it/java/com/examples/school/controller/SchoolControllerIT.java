@@ -14,6 +14,7 @@ import com.examples.school.repository.StudentRepository;
 import com.examples.school.repository.mongo.StudentMongoRepository;
 import com.examples.school.view.StudentView;
 import com.mongodb.MongoClient;
+import com.mongodb.ServerAddress;
 
 /**
  * Communicates with a MongoDB server on localhost; start MongoDB with Docker with
@@ -36,10 +37,15 @@ public class SchoolControllerIT {
 
 	private AutoCloseable closeable;
 
+	private static int mongoPort =
+		Integer.parseInt(System.getProperty("mongo.port", "27017"));
+
 	@Before
 	public void setUp() {
 		closeable = MockitoAnnotations.openMocks(this);
-		studentRepository = new StudentMongoRepository(new MongoClient("localhost"));
+		studentRepository = new StudentMongoRepository(
+			new MongoClient(
+				new ServerAddress("localhost", mongoPort)));
 		// explicit empty the database through the repository
 		for (Student student : studentRepository.findAll()) {
 			studentRepository.delete(student.getId());
