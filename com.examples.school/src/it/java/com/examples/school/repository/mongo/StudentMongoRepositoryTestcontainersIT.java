@@ -37,8 +37,7 @@ public class StudentMongoRepositoryTestcontainersIT {
 
 	@ClassRule
 	public static final MongoDBContainer mongo =
-		new MongoDBContainer("mongo:4.4.3") 
-			.withExposedPorts(27017);
+		new MongoDBContainer("mongo:4.4.3");
 
 	private MongoClient client;
 	private StudentMongoRepository studentRepository;
@@ -49,7 +48,7 @@ public class StudentMongoRepositoryTestcontainersIT {
 		client = new MongoClient(
 			new ServerAddress(
 				mongo.getContainerIpAddress(),
-				mongo.getMappedPort(27017)));
+				mongo.getFirstMappedPort()));
 		studentRepository = new StudentMongoRepository(client);
 		MongoDatabase database = client.getDatabase(SCHOOL_DB_NAME);
 		// make sure we always start with a clean database
