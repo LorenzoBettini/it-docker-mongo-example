@@ -39,7 +39,7 @@ class StudentMongoRepositoryTestcontainersJupiterIT {
 
 	@Container
 	static final MongoDBContainer mongo =
-		new MongoDBContainer("mongo:4.2.3") 
+		new MongoDBContainer("mongo:4.4.3") 
 			.withExposedPorts(27017);
 
 	private MongoClient client;
