@@ -12,7 +12,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.bson.Document;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.ClassRule;
 import org.junit.Test;
 import org.testcontainers.containers.MongoDBContainer;
 
@@ -35,9 +34,14 @@ import com.mongodb.client.MongoDatabase;
  */
 public class StudentMongoRepositoryTestcontainersIT {
 
-	@ClassRule
-	public static final MongoDBContainer mongo =
-		new MongoDBContainer("mongo:4.4.3");
+	public static final MongoDBContainer mongo;
+
+	static {
+		mongo =
+			new MongoDBContainer("mongo:4.4.3")
+				.withReuse(true);
+		mongo.start();
+	}
 
 	private MongoClient client;
 	private StudentMongoRepository studentRepository;
