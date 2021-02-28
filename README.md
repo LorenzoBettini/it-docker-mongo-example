@@ -1,5 +1,5 @@
 # it-docker-mongo-example
-A simple example of a Maven project built on Travis CI with Integration Tests and MongoDB
+A simple example of a Maven project built on GitHub Actions (on Linux, macOS and Windows) with Integration Tests and MongoDB
 
 An example of Chapter _Integration tests_ of the book
 
