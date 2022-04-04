@@ -6,6 +6,8 @@ on:
 
 jobs:
   build:
+    # specific version of Windows server, to avoid the error
+    # "The container operating system does not match the host operating system"
     runs-on: windows-2019
     env:
       DOCKER_HOST: tcp://localhost:2375
