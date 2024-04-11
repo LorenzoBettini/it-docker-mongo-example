@@ -47,7 +47,7 @@ public class StudentMongoRepositoryTestcontainersIT {
 	public void setup() {
 		client = new MongoClient(
 			new ServerAddress(
-				mongo.getContainerIpAddress(),
+				mongo.getHost(),
 				mongo.getFirstMappedPort()));
 		studentRepository = new StudentMongoRepository(client);
 		MongoDatabase database = client.getDatabase(SCHOOL_DB_NAME);
