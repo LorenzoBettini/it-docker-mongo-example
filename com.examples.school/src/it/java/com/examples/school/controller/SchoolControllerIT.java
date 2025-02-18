@@ -20,7 +20,7 @@ import com.mongodb.ServerAddress;
  * Communicates with a MongoDB server on localhost; start MongoDB with Docker with
  * 
  * <pre>
- * docker run -p 27017:27017 --rm mongo:4.4.3
+ * docker run -p 27017:27017 --rm mongo:5
  * </pre>
  * 
  * @author Lorenzo Bettini
