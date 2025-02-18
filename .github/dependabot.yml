@@ -8,3 +8,6 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    ignore:
+      - dependency-name: "ch.qos.logback:logback-classic"  # recent versions incompatible with Java 8
+      - dependency-name: "de.bwaldvogel:mongo-java-server" # recent versions incompatible with Java 8
