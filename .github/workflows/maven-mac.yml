@@ -2,6 +2,8 @@ name: Java CI with Maven and Docker in macOS
 
 on:
   push:
+    branches:
+      - master
   pull_request:
 
 jobs:
