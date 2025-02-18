@@ -25,5 +25,5 @@ jobs:
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml', '**/*.yml') }}
         restore-keys: ${{ runner.os }}-m2-
     - name: Build with Maven
-      run: mvn verify
+      run: mvn verify -Pskip-testcontainers
       working-directory: com.examples.school
