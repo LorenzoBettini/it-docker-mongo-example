@@ -175,6 +175,8 @@
 
   <profiles>
     <profile>
+      <!-- Testcontainers does not yet support Windows containers
+        https://github.com/testcontainers/testcontainers-java/issues/2960 -->
       <id>skip-testcontainers</id>
       <build>
         <plugins>

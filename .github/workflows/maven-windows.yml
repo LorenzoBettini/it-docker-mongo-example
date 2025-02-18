@@ -24,6 +24,8 @@ jobs:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml', '**/*.yml') }}
         restore-keys: ${{ runner.os }}-m2-
+    # Testcontainers does not yet support Windows containers
+    # https://github.com/testcontainers/testcontainers-java/issues/2960
     - name: Build with Maven
       run: mvn verify -Pskip-testcontainers
       working-directory: com.examples.school
