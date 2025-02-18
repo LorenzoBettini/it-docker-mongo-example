@@ -3,7 +3,6 @@ package com.examples.school.repository.mongo;
 import static com.examples.school.repository.mongo.StudentMongoRepository.SCHOOL_DB_NAME;
 import static com.examples.school.repository.mongo.StudentMongoRepository.STUDENT_COLLECTION_NAME;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -36,12 +35,9 @@ import com.mongodb.client.MongoDatabase;
  */
 public class StudentMongoRepositoryTestcontainersIT {
 
-	@SuppressWarnings("resource")
 	@ClassRule
 	public static final MongoDBContainer mongo =
-		new MongoDBContainer("mongo:5")
-			.withStartupAttempts(5)
-			.withStartupTimeout(Duration.ofMinutes(5));
+		new MongoDBContainer("mongo:5");
 
 	private MongoClient client;
 	private StudentMongoRepository studentRepository;
