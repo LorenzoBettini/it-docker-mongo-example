@@ -139,7 +139,7 @@
         <configuration>
           <images>
             <image>
-              <name>mongo:4.4.3</name>
+              <name>mongo:5</name>
               <run>
                 <ports>
                   <port>mongo.mapped.port:27017</port>
