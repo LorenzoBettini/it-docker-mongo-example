@@ -10,10 +10,6 @@ updates:
       - dependency-name: "de.bwaldvogel:mongo-java-server" # recent versions incompatible with Java 8
       - dependency-name: "org.mockito:*"
         versions: [">=5.0.0"] # Mockito 4 supports Java 8 and above. Mockito 5 requires Java 11
-    groups:
-      maven-plugin-updates:
-        patterns:
-          - "org.apache.maven.plugins:*" # update official Maven plugins in a single pull request
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
