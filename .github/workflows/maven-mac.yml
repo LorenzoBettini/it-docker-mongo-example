@@ -19,7 +19,7 @@ jobs:
         java-version: 8
         distribution: 'temurin'
     - name: Install Docker
-      uses: docker/setup-docker-action@v4.1.0
+      uses: docker/setup-docker-action@v4.2.0
       with:
         set-host: true
     - name: Cache Maven packages
