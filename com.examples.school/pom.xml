@@ -90,12 +90,12 @@
           by specifying a known version -->
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.5.2</version>
+          <version>3.5.3</version>
         </plugin>
         <!-- For report-only and failsafe-report-only -->
         <plugin>
           <artifactId>maven-surefire-report-plugin</artifactId>
-          <version>3.5.2</version>
+          <version>3.5.3</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -122,7 +122,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
-        <version>3.5.2</version>
+        <version>3.5.3</version>
         <configuration>
           <systemPropertyVariables>
             <mongo.port>${mongo.mapped.port}</mongo.port>
