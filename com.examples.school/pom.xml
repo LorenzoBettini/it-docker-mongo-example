@@ -17,7 +17,7 @@
     <mockito.version>4.11.0</mockito.version>
     <mongo.driver.version>3.12.14</mongo.driver.version>
     <mongo.java.server.version>1.39.0</mongo.java.server.version>
-    <testcontainers.version>1.21.0</testcontainers.version>
+    <testcontainers.version>1.21.2</testcontainers.version>
   </properties>
 
   <dependencies>
