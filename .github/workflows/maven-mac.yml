@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-13
+    runs-on: macos-15-intel
 
     name: Build in macOS
     steps:
@@ -19,7 +19,7 @@ jobs:
         java-version: 8
         distribution: 'temurin'
     - name: Install Docker
-      uses: docker/setup-docker-action@v4.3.0
+      uses: docker/setup-docker-action@v4.7.0
       with:
         set-host: true
     - name: Cache Maven packages
